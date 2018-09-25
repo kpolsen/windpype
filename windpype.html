@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>windpype main module &mdash; windpype 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to the documentation of windpype!" href="index.html" /> 
+
+  
+  <script src="static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> windpype
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">windpype module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-windpype.classes">windpype.classes submodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-windpype.aux">windpype.aux submodule</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">windpype</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>windpype main module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="sources/windpype.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="windpype-main-module">
+<h1>windpype main module<a class="headerlink" href="#windpype-main-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-windpype.classes">
+<span id="windpype-classes-submodule"></span><h2>windpype.classes submodule<a class="headerlink" href="#module-windpype.classes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="windpype.classes.PowerData">
+<em class="property">class </em><code class="descclassname">windpype.classes.</code><code class="descname">PowerData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class defines an object that contains the time series from a specific dataset (e.g. DK1 or Bornholm).</p>
+<dl class="method">
+<dt id="windpype.classes.PowerData.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.GetPSD">
+<code class="descname">GetPSD</code><span class="sig-paren">(</span><em>power_name='TotalWindPower'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.GetPSD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.GetFFT">
+<code class="descname">GetFFT</code><span class="sig-paren">(</span><em>power_name='TotalWindPower'</em>, <em>data_df=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.GetFFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates FFT for dataframe data_df and inserts it back into data_df</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.GetiFFT">
+<code class="descname">GetiFFT</code><span class="sig-paren">(</span><em>freq_cut=0</em>, <em>power_name='TotalWindPower'</em>, <em>data_df=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.GetiFFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates inverse FFT for dataframe data_df and inserts it back into data_df</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.GetDips">
+<code class="descname">GetDips</code><span class="sig-paren">(</span><em>power_name</em>, <em>times=False</em>, <em>min_dip=-30</em>, <em>freq_cut=0</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.GetDips" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.PlotPower">
+<code class="descname">PlotPower</code><span class="sig-paren">(</span><em>powers</em>, <em>colors</em>, <em>labels</em>, <em>ylim=False</em>, <em>time_cut=False</em>, <em>add=False</em>, <em>ylab=''</em>, <em>legend=False</em>, <em>alpha=1</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.PlotPower" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.HighlightDips">
+<code class="descname">HighlightDips</code><span class="sig-paren">(</span><em>power_name</em>, <em>label=None</em>, <em>add=True</em>, <em>legend=False</em>, <em>ylim=False</em>, <em>alpha=1</em>, <em>times=False</em>, <em>time_cut=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.HighlightDips" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.PlotDipDepthVsDuration">
+<code class="descname">PlotDipDepthVsDuration</code><span class="sig-paren">(</span><em>power_name, depth_range=[-50, 400], duration_range=[0, 15], times=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.PlotDipDepthVsDuration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.PlotFFT">
+<code class="descname">PlotFFT</code><span class="sig-paren">(</span><em>power_name='TotalWindPower'</em>, <em>freq_cut=False</em>, <em>color='b'</em>, <em>label=None</em>, <em>add=False</em>, <em>legend=False</em>, <em>ylim=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.PlotFFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.RestoreData">
+<code class="descname">RestoreData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.RestoreData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restores data dataframe from a saved pandas file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.AddData">
+<code class="descname">AddData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.AddData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds data dataframe as an attribute to the PowerData object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.MatchTimeSteps">
+<code class="descname">MatchTimeSteps</code><span class="sig-paren">(</span><em>data_ob</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.MatchTimeSteps" title="Permalink to this definition">¶</a></dt>
+<dd><p>this function matches time steps in data_ob to those of “self”</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.CutTimePeriod">
+<code class="descname">CutTimePeriod</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.CutTimePeriod" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.SplitData">
+<code class="descname">SplitData</code><span class="sig-paren">(</span><em>col_name</em>, <em>value1</em>, <em>value2</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.SplitData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.AddColumnToData">
+<code class="descname">AddColumnToData</code><span class="sig-paren">(</span><em>col_name</em>, <em>array</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.AddColumnToData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.ReplaceArtifacts">
+<code class="descname">ReplaceArtifacts</code><span class="sig-paren">(</span><em>col_name</em>, <em>value</em>, <em>new_value</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.ReplaceArtifacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace some values in the dataframe</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.PowerData.FillNansNULLS">
+<code class="descname">FillNansNULLS</code><span class="sig-paren">(</span><em>col_name</em>, <em>new_value=0</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.PowerData.FillNansNULLS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="windpype.classes.CombPowerData">
+<em class="property">class </em><code class="descclassname">windpype.classes.</code><code class="descname">CombPowerData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.CombPowerData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#windpype.classes.PowerData" title="windpype.classes.PowerData"><code class="xref py py-class docutils literal notranslate"><span class="pre">windpype.classes.PowerData</span></code></a></p>
+<p>This class defines an object that contains <em>combined</em> info from the time series of several datasets.</p>
+<dl class="method">
+<dt id="windpype.classes.CombPowerData.GetHourlyRamps">
+<code class="descname">GetHourlyRamps</code><span class="sig-paren">(</span><em>col_name</em>, <em>time_period=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.CombPowerData.GetHourlyRamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates and returns all changes in power with one hour timesteps, as fraction of total capacity in that time period %.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.CombPowerData.GetHourlyRampPerc">
+<code class="descname">GetHourlyRampPerc</code><span class="sig-paren">(</span><em>time_period</em>, <em>percent</em>, <em>col_name</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.CombPowerData.GetHourlyRampPerc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.CombPowerData.PlotHourlyRamps">
+<code class="descname">PlotHourlyRamps</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>colors=[]</em>, <em>offsets=[]</em>, <em>save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.CombPowerData.PlotHourlyRamps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.CombPowerData.PlotHourlyRampPerc">
+<code class="descname">PlotHourlyRampPerc</code><span class="sig-paren">(</span><em>percent=95</em>, <em>time_diff='year'</em>, <em>col_names=[]</em>, <em>colors=[]</em>, <em>offsets=[]</em>, <em>save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.CombPowerData.PlotHourlyRampPerc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.CombPowerData.PlotDipsVsDuration">
+<code class="descname">PlotDipsVsDuration</code><span class="sig-paren">(</span><em>col_name=''</em>, <em>durations=[]</em>, <em>min_time_step=0</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.CombPowerData.PlotDipsVsDuration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.CombPowerData.PlotDurationCurves">
+<code class="descname">PlotDurationCurves</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>min_time_step=0</em>, <em>colors=[]</em>, <em>labels=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.CombPowerData.PlotDurationCurves" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.CombPowerData.PlotCarpets">
+<code class="descname">PlotCarpets</code><span class="sig-paren">(</span><em>col_names=['TotalWindPower'], years=[2017]</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.CombPowerData.PlotCarpets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make “carpet plot” of hourly ramps on day vs. time</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="windpype.classes.Capacity">
+<em class="property">class </em><code class="descclassname">windpype.classes.</code><code class="descname">Capacity</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.Capacity" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="windpype.classes.Capacity.AddData">
+<code class="descname">AddData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.Capacity.AddData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds data dataframe as an attribute to the PowerData object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.Capacity.AccumulateCapacity">
+<code class="descname">AccumulateCapacity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.Capacity.AccumulateCapacity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.Capacity.PlotCapacity">
+<code class="descname">PlotCapacity</code><span class="sig-paren">(</span><em>save=True, xlim=[numpy.datetime64('2013-01-01'), numpy.datetime64('2019-01-01')]</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.Capacity.PlotCapacity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.classes.Capacity.PlotCapacityOrigin">
+<code class="descname">PlotCapacityOrigin</code><span class="sig-paren">(</span><em>time_period=False</em>, <em>save=True</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.classes.Capacity.PlotCapacityOrigin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-windpype.aux">
+<span id="windpype-aux-submodule"></span><h2>windpype.aux submodule<a class="headerlink" href="#module-windpype.aux" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="windpype.aux.fill_missing_values">
+<code class="descclassname">windpype.aux.</code><code class="descname">fill_missing_values</code><span class="sig-paren">(</span><em>data_df</em>, <em>time_step=3600</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.fill_missing_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data handling: Function that fills in missing time steps with the most recent value for all columns of data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data_df</strong> (<em>object</em>) – Pandas dataframe containing the timeseries.</li>
+<li><strong>time_step</strong> (<em>int/float</em>) – Desired time step, default: 60*60 seconds</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="windpype.aux.CombineDataFrames">
+<code class="descclassname">windpype.aux.</code><code class="descname">CombineDataFrames</code><span class="sig-paren">(</span><em>ob_1</em>, <em>ob_2</em>, <em>cut=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.CombineDataFrames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data handling: Function that combines two dataframes into one.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ob_1</strong> (<em>object</em>) – Object with dataframe 1 stored as attribute data_df</li>
+<li><strong>ob_2</strong> (<em>object</em>) – Object with dataframe 2 stored as attribute data_df</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="windpype.aux.SaveData">
+<code class="descclassname">windpype.aux.</code><code class="descname">SaveData</code><span class="sig-paren">(</span><em>data_df</em>, <em>file_path=''</em>, <em>file_name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.SaveData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data handling: Function that saves dataframe.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data_df</strong> (<em>Pandas dataframe</em>) – Dataframe to be stored.</li>
+<li><strong>filepath</strong> (<em>str</em>) – default: ‘’</li>
+<li><strong>file_name</strong> (<em>str</em>) – default: ‘’</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="windpype.aux.update_times">
+<code class="descclassname">windpype.aux.</code><code class="descname">update_times</code><span class="sig-paren">(</span><em>data_df</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.update_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data handling: Function that updates date and times in dataframe.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data_df</strong> (<em>Pandas dataframe</em>) – Dataframe to updated.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="windpype.aux.plot_PSD">
+<code class="descclassname">windpype.aux.</code><code class="descname">plot_PSD</code><span class="sig-paren">(</span><em>data_ob</em>, <em>power_name</em>, <em>color='b'</em>, <em>label=None</em>, <em>add=False</em>, <em>legend=False</em>, <em>ylim=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.plot_PSD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="windpype.aux.plot_FFT">
+<code class="descclassname">windpype.aux.</code><code class="descname">plot_FFT</code><span class="sig-paren">(</span><em>data_ob</em>, <em>power_name</em>, <em>freq_cut=False</em>, <em>color='b'</em>, <em>label=None</em>, <em>add=False</em>, <em>legend=False</em>, <em>ylim=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.plot_FFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="windpype.aux.plot_power">
+<code class="descclassname">windpype.aux.</code><code class="descname">plot_power</code><span class="sig-paren">(</span><em>data_df</em>, <em>power_name</em>, <em>color='b'</em>, <em>times=False</em>, <em>label=None</em>, <em>add=False</em>, <em>legend=False</em>, <em>ylim=False</em>, <em>ylab='Power [MW]'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.plot_power" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="windpype.aux.tick_function">
+<code class="descclassname">windpype.aux.</code><code class="descname">tick_function</code><span class="sig-paren">(</span><em>freqs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.tick_function" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="windpype.aux.add_labels">
+<code class="descclassname">windpype.aux.</code><code class="descname">add_labels</code><span class="sig-paren">(</span><em>ax1</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.add_labels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="windpype.aux.update_dictionary">
+<code class="descclassname">windpype.aux.</code><code class="descname">update_dictionary</code><span class="sig-paren">(</span><em>old_dict</em>, <em>new_values</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.update_dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that updates a dictionary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>old_dict</strong> (<em>dict</em>) – Old dictionary</li>
+<li><strong>new_values</strong> – Dictionary with the new entries to old_dict</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to the documentation of windpype!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Karen Pardos Olsen.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
