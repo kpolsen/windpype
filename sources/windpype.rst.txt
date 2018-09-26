@@ -2,14 +2,21 @@ windpype main module
 ====================
 
 
-windpype.classes submodule
---------------------------
+windpype.power submodule
+------------------------
 
-.. automodule:: windpype.classes
+.. automodule:: windpype.power
     :members:
     :undoc-members:
     :show-inheritance:
 
+windpype.capacity submodule
+---------------------------
+
+.. automodule:: windpype.capacity
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
 windpype.aux submodule
 ----------------------
