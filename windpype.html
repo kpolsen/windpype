@@ -160,98 +160,117 @@
 <dl class="method">
 <dt id="windpype.power.PowerData.info">
 <code class="descname">info</code><span class="sig-paren">(</span><em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.info" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Prints basic info about this dataset.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.AddYearlyData">
 <code class="descname">AddYearlyData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddYearlyData" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Aggregates data (anything not time related) for one year at a time,
+and adds result as attribute.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.AddWindPenetration">
 <code class="descname">AddWindPenetration</code><span class="sig-paren">(</span><em>power_names=[]</em>, <em>load_names=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddWindPenetration" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.GetPSD">
-<code class="descname">GetPSD</code><span class="sig-paren">(</span><em>power_name='TotalWindPower'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetPSD" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.GetFFT">
-<code class="descname">GetFFT</code><span class="sig-paren">(</span><em>power_name='TotalWindPower'</em>, <em>data_df=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetFFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates FFT for dataframe data_df and inserts it back into data_df</p>
+<dd><p>Calculates wind penetration in percent of total consumption,
+and adds result as attribute.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.GetiFFT">
-<code class="descname">GetiFFT</code><span class="sig-paren">(</span><em>freq_cut=0</em>, <em>power_name='TotalWindPower'</em>, <em>data_df=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetiFFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates inverse FFT for dataframe data_df and inserts it back into data_df</p>
+<dt id="windpype.power.PowerData.AddPSD">
+<code class="descname">AddPSD</code><span class="sig-paren">(</span><em>power_name='TotalWindPower'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddPSD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates Power Spectral Distribution (PSD) of wind power,
+and adds result as attribute.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.GetDips">
-<code class="descname">GetDips</code><span class="sig-paren">(</span><em>power_name</em>, <em>times=False</em>, <em>min_dip=-30</em>, <em>freq_cut=0</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetDips" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="windpype.power.PowerData.AddFFT">
+<code class="descname">AddFFT</code><span class="sig-paren">(</span><em>power_name='TotalWindPower'</em>, <em>data_df=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddFFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates Fast Fourier Transform (FFT) for wind power and inserts it back into dataframe data_df. Returns dataframe.</p>
+</dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.GetFlexNeed">
-<code class="descname">GetFlexNeed</code><span class="sig-paren">(</span><em>bal_price_name=''</em>, <em>power_name=''</em>, <em>spot_price_name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetFlexNeed" title="Permalink to this definition">¶</a></dt>
+<dt id="windpype.power.PowerData.AddiFFT">
+<code class="descname">AddiFFT</code><span class="sig-paren">(</span><em>freq_cut=0</em>, <em>power_name='TotalWindPower'</em>, <em>data_df=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddiFFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates inverse Fast Fourier Transform (iFFT) for dataframe data_df and inserts it back into dataframe data_df. Returns dataframe.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.AddDips">
+<code class="descname">AddDips</code><span class="sig-paren">(</span><em>power_name</em>, <em>times=False</em>, <em>min_dip=-30</em>, <em>freq_cut=0</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddDips" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identifies dips in wind power time series,
+and adds result as attribute.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.AddFlexNeed">
+<code class="descname">AddFlexNeed</code><span class="sig-paren">(</span><em>bal_price_name=''</em>, <em>power_name=''</em>, <em>spot_price_name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddFlexNeed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates probability for flexibility needs at certain durations,
-as represented by the probability that the balancing price when away from zero</p>
+as represented by the probability that the balancing price when away from zero.
+Adds the result as attributes.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.PlotFlexNeed">
 <code class="descname">PlotFlexNeed</code><span class="sig-paren">(</span><em>bal_price_name=''</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotFlexNeed" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot probability for flexibility needs at certain durations,
-as represented by the probability that the balancing price when away from zero</p>
+as represented by the probability that the balancing price when away from zero.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.PlotYearlyData">
 <code class="descname">PlotYearlyData</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>colors=[]</em>, <em>save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotYearlyData" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Plots data aggregated for one year at a time.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.PlotWindPenetration">
 <code class="descname">PlotWindPenetration</code><span class="sig-paren">(</span><em>power_names=[]</em>, <em>load_names=[]</em>, <em>colors=[]</em>, <em>save=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotWindPenetration" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Plots wind penetration in percent of total consumption.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.PlotTimeSeries">
 <code class="descname">PlotTimeSeries</code><span class="sig-paren">(</span><em>col_names</em>, <em>colors</em>, <em>labels</em>, <em>ylim=False</em>, <em>time_cut=False</em>, <em>add=False</em>, <em>ylab='Power [MW]'</em>, <em>legend=False</em>, <em>alpha=1</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotTimeSeries" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Plots time series of data for specific time period (all times by default).</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.HighlightDips">
 <code class="descname">HighlightDips</code><span class="sig-paren">(</span><em>power_name</em>, <em>label=None</em>, <em>add=True</em>, <em>legend=False</em>, <em>ylim=False</em>, <em>alpha=1</em>, <em>times=False</em>, <em>time_cut=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.HighlightDips" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Highlights identified dips on existing time series plot.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.PlotDipDepthVsDuration">
 <code class="descname">PlotDipDepthVsDuration</code><span class="sig-paren">(</span><em>power_name, depth_range=[-50, 400], duration_range=[0, 15], times=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotDipDepthVsDuration" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Plots depths vs durations of of identified dips in countour plot.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.PlotDipDepthVsBalPrice">
 <code class="descname">PlotDipDepthVsBalPrice</code><span class="sig-paren">(</span><em>power_names, bal_price_names, spot_price_names, colors=['b', 'r', 'k'], times=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotDipDepthVsBalPrice" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Plots depths vs balancing price (up and down) of identified dips.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.PlotDipDurationsVsBalPrice">
 <code class="descname">PlotDipDurationsVsBalPrice</code><span class="sig-paren">(</span><em>power_names, bal_price_names, spot_price_names, colors=['b', 'r', 'k'], times=False, save=True</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotDipDurationsVsBalPrice" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Plots durations vs balancing price (up and down) of identified dips.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.PlotFFT">
 <code class="descname">PlotFFT</code><span class="sig-paren">(</span><em>power_name='TotalWindPower'</em>, <em>freq_cut=False</em>, <em>color='b'</em>, <em>label=None</em>, <em>add=False</em>, <em>legend=False</em>, <em>ylim=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotFFT" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Plots Fast Fourier Transform (FFT) for wind power.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.PlotPriceSignal">
 <code class="descname">PlotPriceSignal</code><span class="sig-paren">(</span><em>power_name=''</em>, <em>price_name=''</em>, <em>duration=False</em>, <em>depth=False</em>, <em>offset=10</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotPriceSignal" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Plots price signal time series close to dips of specific duration.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.RestoreData">
@@ -268,7 +287,7 @@ as represented by the probability that the balancing price when away from zero</
 <dl class="method">
 <dt id="windpype.power.PowerData.MatchTimeSteps">
 <code class="descname">MatchTimeSteps</code><span class="sig-paren">(</span><em>data_ob</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.MatchTimeSteps" title="Permalink to this definition">¶</a></dt>
-<dd><p>this function matches time steps in data_ob to those of “self”</p>
+<dd><p>Matches time steps in self.data_df to those of the passed object “data_ob” (typically of more coarse time resolution).</p>
 </dd></dl>
 
 <dl class="method">
@@ -289,13 +308,14 @@ as represented by the probability that the balancing price when away from zero</
 <dl class="method">
 <dt id="windpype.power.PowerData.ReplaceArtifacts">
 <code class="descname">ReplaceArtifacts</code><span class="sig-paren">(</span><em>col_name</em>, <em>value</em>, <em>new_value</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.ReplaceArtifacts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Replace some values in the dataframe</p>
+<dd><p>Replaces weird values in the dataframe.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.FillNansNULLS">
 <code class="descname">FillNansNULLS</code><span class="sig-paren">(</span><em>col_name</em>, <em>new_value=0</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.FillNansNULLS" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Replaces NaNs in the dataframe with a new value.</p>
+</dd></dl>
 
 </dd></dl>
 
