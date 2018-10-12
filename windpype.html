@@ -223,6 +223,11 @@ Adds the result as attributes.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="windpype.power.PowerData.AddCumCapacity">
+<code class="descname">AddCumCapacity</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddCumCapacity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="windpype.power.PowerData.PlotHisto">
 <code class="descname">PlotHisto</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHisto" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -366,6 +371,17 @@ as represented by the probability that the balancing price when away from zero.<
 <dd><p>Bases: <a class="reference internal" href="#windpype.power.PowerData" title="windpype.power.PowerData"><code class="xref py py-class docutils literal notranslate"><span class="pre">windpype.power.PowerData</span></code></a></p>
 <p>This class defines an object that contains <em>combined</em> power info from the time series of several datasets.</p>
 <dl class="method">
+<dt id="windpype.power.CombPowerData.MagnitudesToRamps">
+<code class="descname">MagnitudesToRamps</code><span class="sig-paren">(</span><em>magnitudes</em>, <em>times</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.MagnitudesToRamps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.CombPowerData.GetHourlySteps">
+<code class="descname">GetHourlySteps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.GetHourlySteps" title="Permalink to this definition">¶</a></dt>
+<dd><p>A raw method that only extracts changes every 1 hour.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="windpype.power.CombPowerData.GetMinimumRamps">
 <code class="descname">GetMinimumRamps</code><span class="sig-paren">(</span><em>col_name</em>, <em>time_period=False</em>, <em>d_data='../../data/'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.GetMinimumRamps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates and returns all changes in power with minimum timestep in data, as fraction of total capacity in that time period %.</p>
@@ -379,6 +395,11 @@ as represented by the probability that the balancing price when away from zero.<
 <dl class="method">
 <dt id="windpype.power.CombPowerData.PlotMinimumRamps">
 <code class="descname">PlotMinimumRamps</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>colors=[]</em>, <em>offsets=[]</em>, <em>save=False</em>, <em>fig_name='min_ramps'</em>, <em>d_plot='../../plots/'</em>, <em>time_cut=False</em>, <em>max_ramp=30</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.PlotMinimumRamps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.CombPowerData.PlotRamps">
+<code class="descname">PlotRamps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.PlotRamps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -403,7 +424,7 @@ as represented by the probability that the balancing price when away from zero.<
 
 <dl class="method">
 <dt id="windpype.power.CombPowerData.PlotCarpets">
-<code class="descname">PlotCarpets</code><span class="sig-paren">(</span><em>col_names=['TotalWindPower'], years=[2017], save=True</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.PlotCarpets" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PlotCarpets</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.PlotCarpets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make “carpet plot” of hourly ramps on day vs. time</p>
 </dd></dl>
 
@@ -543,8 +564,14 @@ as represented by the probability that the balancing price when away from zero.<
 </dd></dl>
 
 <dl class="function">
+<dt id="windpype.aux.pretty_label">
+<code class="descclassname">windpype.aux.</code><code class="descname">pretty_label</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.pretty_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a pretty label for plotting etc. for given column name.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="windpype.aux.handle_args">
-<code class="descclassname">windpype.aux.</code><code class="descname">handle_args</code><span class="sig-paren">(</span><em>kwargs</em>, <em>argkeys_needed</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.handle_args" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">windpype.aux.</code><code class="descname">handle_args</code><span class="sig-paren">(</span><em>kwargs</em>, <em>argkeys_needed</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.handle_args" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make custom namespace for specific method</p>
 </dd></dl>
 
