@@ -223,9 +223,53 @@ Adds the result as attributes.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.AddCumCapacity">
-<code class="descname">AddCumCapacity</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddCumCapacity" title="Permalink to this definition">¶</a></dt>
+<dt id="windpype.power.PowerData.AddAccumCapacity">
+<code class="descname">AddAccumCapacity</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddAccumCapacity" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.IdentifyStorms">
+<code class="descname">IdentifyStorms</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.IdentifyStorms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify storms, based on extreme hourly ramps</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotMinimumRamps">
+<code class="descname">PlotMinimumRamps</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>colors=[]</em>, <em>offsets=[]</em>, <em>save=False</em>, <em>fig_name='min_ramps'</em>, <em>d_plot='../../plots/'</em>, <em>time_cut=False</em>, <em>max_ramp=30</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotMinimumRamps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotRamps">
+<code class="descname">PlotRamps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotRamps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotHourlyStepProfiles">
+<code class="descname">PlotHourlyStepProfiles</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepProfiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots histograms of changes every 1 hour, must be used with 1 hour time series data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotHourlyStepPerc">
+<code class="descname">PlotHourlyStepPerc</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepPerc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots percentiles of histograms of changes every 1 hour, must be used with 1 hour time series data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotDipsVsDuration">
+<code class="descname">PlotDipsVsDuration</code><span class="sig-paren">(</span><em>col_name=''</em>, <em>durations=[]</em>, <em>min_time_step=0</em>, <em>save=False</em>, <em>d_plot='../../plots/'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotDipsVsDuration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotDurationCurves">
+<code class="descname">PlotDurationCurves</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>min_time_step=0</em>, <em>colors=[]</em>, <em>labels=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotDurationCurves" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotCarpets">
+<code class="descname">PlotCarpets</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotCarpets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make “carpet plot” of hourly ramps on day vs. time</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="windpype.power.PowerData.PlotHisto">
@@ -294,6 +338,35 @@ as represented by the probability that the balancing price when away from zero.<
 </dd></dl>
 
 <dl class="method">
+<dt id="windpype.power.PowerData.ExtremeHourlyRamps">
+<code class="descname">ExtremeHourlyRamps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.ExtremeHourlyRamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds percentiles and extreme hourly ramps with and without storms, and stores as tex table.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.MagnitudesToRamps">
+<code class="descname">MagnitudesToRamps</code><span class="sig-paren">(</span><em>magnitudes</em>, <em>times</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.MagnitudesToRamps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.GetHourlySteps">
+<code class="descname">GetHourlySteps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetHourlySteps" title="Permalink to this definition">¶</a></dt>
+<dd><p>A raw method that only extracts changes every 1 hour.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.GetMinimumRamps">
+<code class="descname">GetMinimumRamps</code><span class="sig-paren">(</span><em>col_name</em>, <em>time_period=False</em>, <em>d_data='../../data/'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetMinimumRamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates and returns all changes in power with minimum timestep in data, as fraction of total capacity in that time period %.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.GetHourlyStepPerc">
+<code class="descname">GetHourlyStepPerc</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetHourlyStepPerc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates percentiles of extreme step sizes, using result from GetHourlySteps().</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="windpype.power.PowerData.RestoreData">
 <code class="descname">RestoreData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.RestoreData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restores data dataframe from a saved pandas file.</p>
@@ -306,6 +379,11 @@ as represented by the probability that the balancing price when away from zero.<
 </dd></dl>
 
 <dl class="method">
+<dt id="windpype.power.PowerData.RoundToNearestTimeStep">
+<code class="descname">RoundToNearestTimeStep</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.RoundToNearestTimeStep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="windpype.power.PowerData.MatchTimeSteps">
 <code class="descname">MatchTimeSteps</code><span class="sig-paren">(</span><em>data_ob</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.MatchTimeSteps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Matches time steps in self.data_df to those of the passed object “data_ob” (typically of more coarse time resolution).</p>
@@ -313,7 +391,7 @@ as represented by the probability that the balancing price when away from zero.<
 
 <dl class="method">
 <dt id="windpype.power.PowerData.ChangeTimeStep">
-<code class="descname">ChangeTimeStep</code><span class="sig-paren">(</span><em>time_step</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.ChangeTimeStep" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ChangeTimeStep</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.ChangeTimeStep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Smoothes signal to a lower resolution time step</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -342,7 +420,12 @@ as represented by the probability that the balancing price when away from zero.<
 
 <dl class="method">
 <dt id="windpype.power.PowerData.RemoveDuplicateTimes">
-<code class="descname">RemoveDuplicateTimes</code><span class="sig-paren">(</span><em>col_name</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.RemoveDuplicateTimes" title="Permalink to this definition">¶</a></dt>
+<code class="descname">RemoveDuplicateTimes</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.RemoveDuplicateTimes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.FillInTimeSteps">
+<code class="descname">FillInTimeSteps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.FillInTimeSteps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -359,7 +442,7 @@ as represented by the probability that the balancing price when away from zero.<
 
 <dl class="method">
 <dt id="windpype.power.PowerData.FillNansNULLS">
-<code class="descname">FillNansNULLS</code><span class="sig-paren">(</span><em>col_name</em>, <em>new_value=0</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.FillNansNULLS" title="Permalink to this definition">¶</a></dt>
+<code class="descname">FillNansNULLS</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.FillNansNULLS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces NaNs in the dataframe with a new value.</p>
 </dd></dl>
 
@@ -370,64 +453,6 @@ as represented by the probability that the balancing price when away from zero.<
 <em class="property">class </em><code class="descclassname">windpype.power.</code><code class="descname">CombPowerData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#windpype.power.PowerData" title="windpype.power.PowerData"><code class="xref py py-class docutils literal notranslate"><span class="pre">windpype.power.PowerData</span></code></a></p>
 <p>This class defines an object that contains <em>combined</em> power info from the time series of several datasets.</p>
-<dl class="method">
-<dt id="windpype.power.CombPowerData.MagnitudesToRamps">
-<code class="descname">MagnitudesToRamps</code><span class="sig-paren">(</span><em>magnitudes</em>, <em>times</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.MagnitudesToRamps" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.CombPowerData.GetHourlySteps">
-<code class="descname">GetHourlySteps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.GetHourlySteps" title="Permalink to this definition">¶</a></dt>
-<dd><p>A raw method that only extracts changes every 1 hour.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.CombPowerData.GetMinimumRamps">
-<code class="descname">GetMinimumRamps</code><span class="sig-paren">(</span><em>col_name</em>, <em>time_period=False</em>, <em>d_data='../../data/'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.GetMinimumRamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates and returns all changes in power with minimum timestep in data, as fraction of total capacity in that time period %.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.CombPowerData.GetHourlyRampPerc">
-<code class="descname">GetHourlyRampPerc</code><span class="sig-paren">(</span><em>time_period</em>, <em>percent</em>, <em>col_name</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.GetHourlyRampPerc" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.CombPowerData.PlotMinimumRamps">
-<code class="descname">PlotMinimumRamps</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>colors=[]</em>, <em>offsets=[]</em>, <em>save=False</em>, <em>fig_name='min_ramps'</em>, <em>d_plot='../../plots/'</em>, <em>time_cut=False</em>, <em>max_ramp=30</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.PlotMinimumRamps" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.CombPowerData.PlotRamps">
-<code class="descname">PlotRamps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.PlotRamps" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.CombPowerData.PlotHourlyRamps">
-<code class="descname">PlotHourlyRamps</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>colors=[]</em>, <em>offsets=[]</em>, <em>save=False</em>, <em>fig_name='hourly_ramps'</em>, <em>d_plot='../../plots/'</em>, <em>time_cut=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.PlotHourlyRamps" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.CombPowerData.PlotHourlyRampPerc">
-<code class="descname">PlotHourlyRampPerc</code><span class="sig-paren">(</span><em>percent=95</em>, <em>time_diff='year'</em>, <em>col_names=[]</em>, <em>colors=[]</em>, <em>offsets=[]</em>, <em>save=False</em>, <em>d_plot='../../plots/'</em>, <em>time_cut=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.PlotHourlyRampPerc" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.CombPowerData.PlotDipsVsDuration">
-<code class="descname">PlotDipsVsDuration</code><span class="sig-paren">(</span><em>col_name=''</em>, <em>durations=[]</em>, <em>min_time_step=0</em>, <em>save=False</em>, <em>d_plot='../../plots/'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.PlotDipsVsDuration" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.CombPowerData.PlotDurationCurves">
-<code class="descname">PlotDurationCurves</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>min_time_step=0</em>, <em>colors=[]</em>, <em>labels=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.PlotDurationCurves" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.CombPowerData.PlotCarpets">
-<code class="descname">PlotCarpets</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData.PlotCarpets" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make “carpet plot” of hourly ramps on day vs. time</p>
-</dd></dl>
-
 </dd></dl>
 
 </div>
@@ -451,7 +476,7 @@ as represented by the probability that the balancing price when away from zero.<
 
 <dl class="method">
 <dt id="windpype.capacity.Capacity.PlotCapacity">
-<code class="descname">PlotCapacity</code><span class="sig-paren">(</span><em>save=True, time_cut=[numpy.datetime64('2013-01-01'), numpy.datetime64('2019-01-01')], d_plot='../../plots/'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.capacity.Capacity.PlotCapacity" title="Permalink to this definition">¶</a></dt>
+<code class="descname">PlotCapacity</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.capacity.Capacity.PlotCapacity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots accumulated capacity as function of time for DK, DK1, DK2 and Bornholm.</p>
 </dd></dl>
 
@@ -533,7 +558,7 @@ as represented by the probability that the balancing price when away from zero.<
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data_df</strong> (<em>Pandas dataframe</em>) – Dataframe to updated.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data_df</strong> (<em>Pandas dataframe</em>) – Dataframe to updated. Important that it contains all datetimes stamps intact.</td>
 </tr>
 </tbody>
 </table>
@@ -544,6 +569,17 @@ as represented by the probability that the balancing price when away from zero.<
 <code class="descclassname">windpype.aux.</code><code class="descname">plot_PSD</code><span class="sig-paren">(</span><em>data_ob</em>, <em>power_name</em>, <em>color='b'</em>, <em>label=None</em>, <em>add=False</em>, <em>legend=False</em>, <em>ylim=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.plot_PSD" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots PSD (will probably be replaced by a method in the PowerData class).</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="windpype.aux.identify_storms">
+<code class="descclassname">windpype.aux.</code><code class="descname">identify_storms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.identify_storms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses wikipedia list (<a class="reference external" href="https://da.wikipedia.org/wiki/Navngivne_storme_i_Danmark">https://da.wikipedia.org/wiki/Navngivne_storme_i_Danmark</a>) to search for big storms.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="windpype.aux.zone">
+<code class="descclassname">windpype.aux.</code><code class="descname">zone</code><span class="sig-paren">(</span><em>col_name</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.zone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="windpype.aux.update_dictionary">
