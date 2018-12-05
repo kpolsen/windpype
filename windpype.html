@@ -165,20 +165,47 @@
 <div class="section" id="module-windpype.power">
 <span id="windpype-power-submodule"></span><h2>windpype.power submodule<a class="headerlink" href="#module-windpype.power" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
+<dt id="windpype.power.CombPowerData">
+<em class="property">class </em><code class="descclassname">windpype.power.</code><code class="descname">CombPowerData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#windpype.power.PowerData" title="windpype.power.PowerData"><code class="xref py py-class docutils literal notranslate"><span class="pre">windpype.power.PowerData</span></code></a></p>
+<p>This class defines an object that contains <em>combined</em> power info from the time series of several datasets.</p>
+</dd></dl>
+
+<dl class="class">
 <dt id="windpype.power.PowerData">
 <em class="property">class </em><code class="descclassname">windpype.power.</code><code class="descname">PowerData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class defines an object that contains the time series of power produced and consumed from a specific dataset (e.g. DK1 or Bornholm).</p>
 <dl class="method">
-<dt id="windpype.power.PowerData.info">
-<code class="descname">info</code><span class="sig-paren">(</span><em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Prints basic info about this dataset.</p>
+<dt id="windpype.power.PowerData.AddAccumCapacity">
+<code class="descname">AddAccumCapacity</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddAccumCapacity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.AddColumnToData">
+<code class="descname">AddColumnToData</code><span class="sig-paren">(</span><em>col_name</em>, <em>array</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddColumnToData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.AddData">
+<code class="descname">AddData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds data dataframe as an attribute to the PowerData object.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.AddYearlyData">
-<code class="descname">AddYearlyData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddYearlyData" title="Permalink to this definition">¶</a></dt>
-<dd><p>Aggregates data (anything not time related) for one year at a time,
-and adds result as attribute.</p>
+<dt id="windpype.power.PowerData.AddExceptionTest">
+<code class="descname">AddExceptionTest</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddExceptionTest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.AddFFT">
+<code class="descname">AddFFT</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddFFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates Fast Fourier Transform (FFT) for wind power and inserts it back into dataframe data_df. Returns dataframe.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.AddHighPenetrationIndex">
+<code class="descname">AddHighPenetrationIndex</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddHighPenetrationIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add index to separate high wind penetration from low</p>
 </dd></dl>
 
 <dl class="method">
@@ -195,9 +222,22 @@ and adds result as attribute.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.AddFFT">
-<code class="descname">AddFFT</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddFFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates Fast Fourier Transform (FFT) for wind power and inserts it back into dataframe data_df. Returns dataframe.</p>
+<dt id="windpype.power.PowerData.AddPenetrationFraction">
+<code class="descname">AddPenetrationFraction</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddPenetrationFraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates wind penetration in percent of total consumption, and adds result in dataframe.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.AddSDA">
+<code class="descname">AddSDA</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddSDA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs a Swinging Door Algorithm on the power data to look for ramps up and down.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.AddYearlyData">
+<code class="descname">AddYearlyData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddYearlyData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregates data (anything not time related) for one year at a time,
+and adds result as attribute.</p>
 </dd></dl>
 
 <dl class="method">
@@ -208,37 +248,17 @@ and inserts it back into dataframe data_df.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.AddExceptionTest">
-<code class="descname">AddExceptionTest</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddExceptionTest" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.AddSDA">
-<code class="descname">AddSDA</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddSDA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Runs a Swinging Door Algorithm on the power data to look for ramps up and down.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.AddAccumCapacity">
-<code class="descname">AddAccumCapacity</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddAccumCapacity" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.AddPenetrationFraction">
-<code class="descname">AddPenetrationFraction</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddPenetrationFraction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates wind penetration in percent of total consumption, and adds result in dataframe.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.AddHighPenetrationIndex">
-<code class="descname">AddHighPenetrationIndex</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddHighPenetrationIndex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add index to separate high wind penetration from low</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.IdentifyStorms">
-<code class="descname">IdentifyStorms</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.IdentifyStorms" title="Permalink to this definition">¶</a></dt>
-<dd><p>Identify storms, based on extreme hourly ramps</p>
+<dt id="windpype.power.PowerData.ChangeTimeStep">
+<code class="descname">ChangeTimeStep</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.ChangeTimeStep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Smoothes signal to a lower resolution time step</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time_step</strong> (<em>int</em>) – Number of minutes to use as new time step, default: 5</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -248,125 +268,25 @@ and inserts it back into dataframe data_df.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.PlotMinimumRamps">
-<code class="descname">PlotMinimumRamps</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>colors=[]</em>, <em>offsets=[]</em>, <em>save=False</em>, <em>fig_name='min_ramps'</em>, <em>d_plot='plots/'</em>, <em>time_cut=False</em>, <em>max_ramp=30</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotMinimumRamps" title="Permalink to this definition">¶</a></dt>
+<dt id="windpype.power.PowerData.CutTimePeriod">
+<code class="descname">CutTimePeriod</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.CutTimePeriod" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.PlotSDARamps">
-<code class="descname">PlotSDARamps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotSDARamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>3D view of SDA ramps.</p>
+<dt id="windpype.power.PowerData.ExtremeHourlyRamps">
+<code class="descname">ExtremeHourlyRamps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.ExtremeHourlyRamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds percentiles and extreme hourly ramps with and without storms, and stores as tex table.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.PlotHourlySteps">
-<code class="descname">PlotHourlySteps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlySteps" title="Permalink to this definition">¶</a></dt>
+<dt id="windpype.power.PowerData.FillInTimeSteps">
+<code class="descname">FillInTimeSteps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.FillInTimeSteps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.PlotHourlyStepProfiles">
-<code class="descname">PlotHourlyStepProfiles</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepProfiles" title="Permalink to this definition">¶</a></dt>
-<dd><p>3D view of hourly ramps.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotHourlyStepSTD">
-<code class="descname">PlotHourlyStepSTD</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepSTD" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots Standard Deviation of histograms of changes every 1 hour, must be used with 1 hour time series data.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotHourlyStepPerc">
-<code class="descname">PlotHourlyStepPerc</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepPerc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots percentiles of histograms of changes every 1 hour, must be used with 1 hour time series data.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotHourlyStepSTDTime">
-<code class="descname">PlotHourlyStepSTDTime</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepSTDTime" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots standard deviations of histograms of changes every 1 hour, as function of time, must be used with 1 hour time series data.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotHourlyStepPercTime">
-<code class="descname">PlotHourlyStepPercTime</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepPercTime" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots percentiles of histograms of changes every 1 hour, as function of time, must be used with 1 hour time series data.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotDipsVsDuration">
-<code class="descname">PlotDipsVsDuration</code><span class="sig-paren">(</span><em>col_name=''</em>, <em>durations=[]</em>, <em>min_time_step=0</em>, <em>save=False</em>, <em>d_plot='plots/'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotDipsVsDuration" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotDurationCurves">
-<code class="descname">PlotDurationCurves</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>min_time_step=0</em>, <em>colors=[]</em>, <em>labels=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotDurationCurves" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotCarpets">
-<code class="descname">PlotCarpets</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotCarpets" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make “carpet plot” of hourly ramps on day vs. time</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotPie">
-<code class="descname">PlotPie</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotPie" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make pie chart of integrated power fractions.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotHisto">
-<code class="descname">PlotHisto</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHisto" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot histogram of an attribute, a column in the dataframe or a supplied data array.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotYearlyData">
-<code class="descname">PlotYearlyData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotYearlyData" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots data aggregated for one year at a time.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotPenetration">
-<code class="descname">PlotPenetration</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotPenetration" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots penetration in percent of total consumption.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotTimeSeries">
-<code class="descname">PlotTimeSeries</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotTimeSeries" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots time series of data for specific time period (all times by default).</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.HighlightDips">
-<code class="descname">HighlightDips</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.HighlightDips" title="Permalink to this definition">¶</a></dt>
-<dd><p>Highlights identified dips on existing time series plot.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.HighlightPenetration">
-<code class="descname">HighlightPenetration</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.HighlightPenetration" title="Permalink to this definition">¶</a></dt>
-<dd><p>Highlights identified times of high/low penetration fraction on existing time series plot.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotMagnitudeVsDuration">
-<code class="descname">PlotMagnitudeVsDuration</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotMagnitudeVsDuration" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots magnitudes vs durations of identified ramps as countour plot.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotiFFT">
-<code class="descname">PlotiFFT</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotiFFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots Fast Fourier Transform (FFT) for wind power.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotFFT">
-<code class="descname">PlotFFT</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotFFT" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots Fast Fourier Transform (FFT) for wind power.</p>
+<dt id="windpype.power.PowerData.FillNansNULLS">
+<code class="descname">FillNansNULLS</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.FillNansNULLS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces NaNs in the dataframe with a new value.</p>
 </dd></dl>
 
 <dl class="method">
@@ -389,25 +309,9 @@ and inserts it back into dataframe data_df.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.PrintIntPowerAsTable">
-<code class="descname">PrintIntPowerAsTable</code><span class="sig-paren">(</span><em>freq_cuts</em>, <em>fluctuations</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PrintIntPowerAsTable" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.ExtremeHourlyRamps">
-<code class="descname">ExtremeHourlyRamps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.ExtremeHourlyRamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>Finds percentiles and extreme hourly ramps with and without storms, and stores as tex table.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.MagnitudesToRamps">
-<code class="descname">MagnitudesToRamps</code><span class="sig-paren">(</span><em>magnitudes</em>, <em>times</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.MagnitudesToRamps" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.GetSDA">
-<code class="descname">GetSDA</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetSDA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns SDA result as numpy array.</p>
+<dt id="windpype.power.PowerData.GetHourlyStepPerc">
+<code class="descname">GetHourlyStepPerc</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetHourlyStepPerc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates percentiles of extreme step sizes, using result from AddHourlySteps(), over specified bin size.</p>
 </dd></dl>
 
 <dl class="method">
@@ -417,32 +321,38 @@ and inserts it back into dataframe data_df.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.GetHourlyStepPerc">
-<code class="descname">GetHourlyStepPerc</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetHourlyStepPerc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates percentiles of extreme step sizes, using result from AddHourlySteps(), over specified bin size.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="windpype.power.PowerData.GetMinimumRamps">
 <code class="descname">GetMinimumRamps</code><span class="sig-paren">(</span><em>col_name</em>, <em>time_period=False</em>, <em>d_data='../../data/'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetMinimumRamps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates and returns all changes in power with minimum timestep in data, as fraction of total capacity in that time period %.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.RestoreData">
-<code class="descname">RestoreData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.RestoreData" title="Permalink to this definition">¶</a></dt>
-<dd><p>Restores data dataframe from a saved pandas file.</p>
+<dt id="windpype.power.PowerData.GetSDA">
+<code class="descname">GetSDA</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.GetSDA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns SDA result as numpy array.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.AddData">
-<code class="descname">AddData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddData" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds data dataframe as an attribute to the PowerData object.</p>
+<dt id="windpype.power.PowerData.HighlightDips">
+<code class="descname">HighlightDips</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.HighlightDips" title="Permalink to this definition">¶</a></dt>
+<dd><p>Highlights identified dips on existing time series plot.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.RoundToNearestTimeStep">
-<code class="descname">RoundToNearestTimeStep</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.RoundToNearestTimeStep" title="Permalink to this definition">¶</a></dt>
+<dt id="windpype.power.PowerData.HighlightPenetration">
+<code class="descname">HighlightPenetration</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.HighlightPenetration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Highlights identified times of high/low penetration fraction on existing time series plot.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.IdentifyStorms">
+<code class="descname">IdentifyStorms</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.IdentifyStorms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify storms, based on extreme hourly ramps</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.MagnitudesToRamps">
+<code class="descname">MagnitudesToRamps</code><span class="sig-paren">(</span><em>magnitudes</em>, <em>times</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.MagnitudesToRamps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -452,42 +362,118 @@ and inserts it back into dataframe data_df.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.ChangeTimeStep">
-<code class="descname">ChangeTimeStep</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.ChangeTimeStep" title="Permalink to this definition">¶</a></dt>
-<dd><p>Smoothes signal to a lower resolution time step</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>time_step</strong> (<em>int</em>) – Number of minutes to use as new time step, default: 5</td>
-</tr>
-</tbody>
-</table>
+<dt id="windpype.power.PowerData.PlotCarpets">
+<code class="descname">PlotCarpets</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotCarpets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make “carpet plot” of hourly ramps on day vs. time</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.CutTimePeriod">
-<code class="descname">CutTimePeriod</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.CutTimePeriod" title="Permalink to this definition">¶</a></dt>
+<dt id="windpype.power.PowerData.PlotDipsVsDuration">
+<code class="descname">PlotDipsVsDuration</code><span class="sig-paren">(</span><em>col_name=''</em>, <em>durations=[]</em>, <em>min_time_step=0</em>, <em>save=False</em>, <em>d_plot='plots/'</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotDipsVsDuration" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.SplitData">
-<code class="descname">SplitData</code><span class="sig-paren">(</span><em>col_name</em>, <em>value1</em>, <em>value2</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.SplitData" title="Permalink to this definition">¶</a></dt>
+<dt id="windpype.power.PowerData.PlotDurationCurves">
+<code class="descname">PlotDurationCurves</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>min_time_step=0</em>, <em>colors=[]</em>, <em>labels=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotDurationCurves" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.AddColumnToData">
-<code class="descname">AddColumnToData</code><span class="sig-paren">(</span><em>col_name</em>, <em>array</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddColumnToData" title="Permalink to this definition">¶</a></dt>
+<dt id="windpype.power.PowerData.PlotFFT">
+<code class="descname">PlotFFT</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotFFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots Fast Fourier Transform (FFT) for wind power.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotHisto">
+<code class="descname">PlotHisto</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHisto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot histogram of an attribute, a column in the dataframe or a supplied data array.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotHourlyStepPerc">
+<code class="descname">PlotHourlyStepPerc</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepPerc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots percentiles of histograms of changes every 1 hour, must be used with 1 hour time series data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotHourlyStepPercTime">
+<code class="descname">PlotHourlyStepPercTime</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepPercTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots percentiles of histograms of changes every 1 hour, as function of time, must be used with 1 hour time series data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotHourlyStepProfiles">
+<code class="descname">PlotHourlyStepProfiles</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepProfiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>3D view of hourly ramps.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotHourlyStepSTD">
+<code class="descname">PlotHourlyStepSTD</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepSTD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots Standard Deviation of histograms of changes every 1 hour, must be used with 1 hour time series data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotHourlyStepSTDTime">
+<code class="descname">PlotHourlyStepSTDTime</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepSTDTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots standard deviations of histograms of changes every 1 hour, as function of time, must be used with 1 hour time series data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotHourlySteps">
+<code class="descname">PlotHourlySteps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlySteps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.RemoveDuplicateTimes">
-<code class="descname">RemoveDuplicateTimes</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.RemoveDuplicateTimes" title="Permalink to this definition">¶</a></dt>
+<dt id="windpype.power.PowerData.PlotMagnitudeVsDuration">
+<code class="descname">PlotMagnitudeVsDuration</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotMagnitudeVsDuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots magnitudes vs durations of identified ramps as countour plot.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotMinimumRamps">
+<code class="descname">PlotMinimumRamps</code><span class="sig-paren">(</span><em>col_names=[]</em>, <em>colors=[]</em>, <em>offsets=[]</em>, <em>save=False</em>, <em>fig_name='min_ramps'</em>, <em>d_plot='plots/'</em>, <em>time_cut=False</em>, <em>max_ramp=30</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotMinimumRamps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.FillInTimeSteps">
-<code class="descname">FillInTimeSteps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.FillInTimeSteps" title="Permalink to this definition">¶</a></dt>
+<dt id="windpype.power.PowerData.PlotPenetration">
+<code class="descname">PlotPenetration</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotPenetration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots penetration in percent of total consumption.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotPie">
+<code class="descname">PlotPie</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotPie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make pie chart of integrated power fractions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotSDARamps">
+<code class="descname">PlotSDARamps</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotSDARamps" title="Permalink to this definition">¶</a></dt>
+<dd><p>3D view of SDA ramps.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotTimeSeries">
+<code class="descname">PlotTimeSeries</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotTimeSeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots time series of data for specific time period (all times by default).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotYearlyData">
+<code class="descname">PlotYearlyData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotYearlyData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots data aggregated for one year at a time.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PlotiFFT">
+<code class="descname">PlotiFFT</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotiFFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots Fast Fourier Transform (FFT) for wind power.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.PrintIntPowerAsTable">
+<code class="descname">PrintIntPowerAsTable</code><span class="sig-paren">(</span><em>freq_cuts</em>, <em>fluctuations</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PrintIntPowerAsTable" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -497,24 +483,38 @@ and inserts it back into dataframe data_df.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="windpype.power.PowerData.RemoveDuplicateTimes">
+<code class="descname">RemoveDuplicateTimes</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.RemoveDuplicateTimes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="windpype.power.PowerData.ReplaceArtifacts">
 <code class="descname">ReplaceArtifacts</code><span class="sig-paren">(</span><em>col_name</em>, <em>value</em>, <em>new_value</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.ReplaceArtifacts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces weird values in the dataframe.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.FillNansNULLS">
-<code class="descname">FillNansNULLS</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.FillNansNULLS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Replaces NaNs in the dataframe with a new value.</p>
+<dt id="windpype.power.PowerData.RestoreData">
+<code class="descname">RestoreData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.RestoreData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restores data dataframe from a saved pandas file.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="windpype.power.PowerData.RoundToNearestTimeStep">
+<code class="descname">RoundToNearestTimeStep</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.RoundToNearestTimeStep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.SplitData">
+<code class="descname">SplitData</code><span class="sig-paren">(</span><em>col_name</em>, <em>value1</em>, <em>value2</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.SplitData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="windpype.power.PowerData.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints basic info about this dataset.</p>
 </dd></dl>
 
-<dl class="class">
-<dt id="windpype.power.CombPowerData">
-<em class="property">class </em><code class="descclassname">windpype.power.</code><code class="descname">CombPowerData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.CombPowerData" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#windpype.power.PowerData" title="windpype.power.PowerData"><code class="xref py py-class docutils literal notranslate"><span class="pre">windpype.power.PowerData</span></code></a></p>
-<p>This class defines an object that contains <em>combined</em> power info from the time series of several datasets.</p>
 </dd></dl>
 
 </div>
@@ -525,15 +525,15 @@ and inserts it back into dataframe data_df.</p>
 <em class="property">class </em><code class="descclassname">windpype.capacity.</code><code class="descname">Capacity</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.capacity.Capacity" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class defines an object that contains the information on installed capacity as found on ENS.dk</p>
 <dl class="method">
-<dt id="windpype.capacity.Capacity.AddData">
-<code class="descname">AddData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.capacity.Capacity.AddData" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds data dataframe as an attribute to the PowerData object.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="windpype.capacity.Capacity.AccumulateCapacity">
 <code class="descname">AccumulateCapacity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windpype.capacity.Capacity.AccumulateCapacity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates accumulated capacity as function of time for DK, DK1, DK2 and Bornholm.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="windpype.capacity.Capacity.AddData">
+<code class="descname">AddData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.capacity.Capacity.AddData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds data dataframe as an attribute to the PowerData object.</p>
 </dd></dl>
 
 <dl class="method">
@@ -553,24 +553,6 @@ and inserts it back into dataframe data_df.</p>
 </div>
 <div class="section" id="module-windpype.aux">
 <span id="windpype-aux-submodule"></span><h2>windpype.aux submodule<a class="headerlink" href="#module-windpype.aux" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="windpype.aux.fill_missing_values">
-<code class="descclassname">windpype.aux.</code><code class="descname">fill_missing_values</code><span class="sig-paren">(</span><em>data_df</em>, <em>time_step=3600</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.fill_missing_values" title="Permalink to this definition">¶</a></dt>
-<dd><p>Data handling: Function that fills in missing time steps with the most recent value for all columns of data.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data_df</strong> (<em>object</em>) – Pandas dataframe containing the timeseries.</li>
-<li><strong>time_step</strong> (<em>int/float</em>) – Desired time step, default: 60*60 seconds</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 <dl class="function">
 <dt id="windpype.aux.CombineDataFrames">
 <code class="descclassname">windpype.aux.</code><code class="descname">CombineDataFrames</code><span class="sig-paren">(</span><em>data_df_1</em>, <em>data_df_2</em>, <em>cut=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.CombineDataFrames" title="Permalink to this definition">¶</a></dt>
@@ -613,14 +595,18 @@ and inserts it back into dataframe data_df.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="windpype.aux.update_times">
-<code class="descclassname">windpype.aux.</code><code class="descname">update_times</code><span class="sig-paren">(</span><em>data_df</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.update_times" title="Permalink to this definition">¶</a></dt>
-<dd><p>Data handling: Function that updates date and times in dataframe.</p>
+<dt id="windpype.aux.fill_missing_values">
+<code class="descclassname">windpype.aux.</code><code class="descname">fill_missing_values</code><span class="sig-paren">(</span><em>data_df</em>, <em>time_step=3600</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.fill_missing_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data handling: Function that fills in missing time steps with the most recent value for all columns of data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data_df</strong> (<em>Pandas dataframe</em>) – Dataframe to updated. Important that it contains all datetimes stamps intact.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data_df</strong> (<em>object</em>) – Pandas dataframe containing the timeseries.</li>
+<li><strong>time_step</strong> (<em>int/float</em>) – Desired time step, default: 60*60 seconds</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -637,15 +623,22 @@ and inserts it back into dataframe data_df.</p>
 <dd></dd></dl>
 
 <dl class="function">
+<dt id="windpype.aux.handle_args">
+<code class="descclassname">windpype.aux.</code><code class="descname">handle_args</code><span class="sig-paren">(</span><em>kwargs</em>, <em>argkeys_needed</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.handle_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make custom namespace for specific method</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="windpype.aux.identify_storms">
 <code class="descclassname">windpype.aux.</code><code class="descname">identify_storms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.identify_storms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uses wikipedia list (<a class="reference external" href="https://da.wikipedia.org/wiki/Navngivne_storme_i_Danmark">https://da.wikipedia.org/wiki/Navngivne_storme_i_Danmark</a>) to search for big storms.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="windpype.aux.zone">
-<code class="descclassname">windpype.aux.</code><code class="descname">zone</code><span class="sig-paren">(</span><em>col_name</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.zone" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="windpype.aux.pretty_label">
+<code class="descclassname">windpype.aux.</code><code class="descname">pretty_label</code><span class="sig-paren">(</span><em>name</em>, <em>percent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.pretty_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a pretty label for plotting etc. for given column name.</p>
+</dd></dl>
 
 <dl class="function">
 <dt id="windpype.aux.update_dictionary">
@@ -666,16 +659,23 @@ and inserts it back into dataframe data_df.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="windpype.aux.pretty_label">
-<code class="descclassname">windpype.aux.</code><code class="descname">pretty_label</code><span class="sig-paren">(</span><em>name</em>, <em>percent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.pretty_label" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a pretty label for plotting etc. for given column name.</p>
+<dt id="windpype.aux.update_times">
+<code class="descclassname">windpype.aux.</code><code class="descname">update_times</code><span class="sig-paren">(</span><em>data_df</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.update_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data handling: Function that updates date and times in dataframe.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data_df</strong> (<em>Pandas dataframe</em>) – Dataframe to updated. Important that it contains all datetimes stamps intact.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
-<dt id="windpype.aux.handle_args">
-<code class="descclassname">windpype.aux.</code><code class="descname">handle_args</code><span class="sig-paren">(</span><em>kwargs</em>, <em>argkeys_needed</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.handle_args" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make custom namespace for specific method</p>
-</dd></dl>
+<dt id="windpype.aux.zone">
+<code class="descclassname">windpype.aux.</code><code class="descname">zone</code><span class="sig-paren">(</span><em>col_name</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.zone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 </div>
