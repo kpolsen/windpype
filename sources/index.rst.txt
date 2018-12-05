@@ -5,6 +5,14 @@
 
 .. highlight:: rst
 
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   
+   Overview <self>
+   Windpype module <windpype>
+   Tutorials <tutorials>
+
 .. role:: python(code)
     :language: python
 

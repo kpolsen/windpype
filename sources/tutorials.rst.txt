@@ -1,0 +1,24 @@
+.. role:: python(code)
+    :language: python
+
+Tutorials
+=========
+:python:`windpype` is best run in a jupyter notebook and below are examples of what can be done with the provided notebooks.
+
+1. Get an overview of the data
+------------------------------
+
+See the notebook tut1_data_overview.ipnb
+
+.. image:: wind_penetration_DK.pdf
+
+2. Inspect location and capacity of installed wind turbines
+-----------------------------------------------------------
+
+See the notebook tut1_data_overview.ipnb
+
+.. image:: turbine_placement.pdf
+
+Plot moment 0 map of a line
+---------------------------
+

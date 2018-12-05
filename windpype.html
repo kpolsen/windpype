@@ -197,21 +197,6 @@ and inserts it back into dataframe data_df.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.AddDips">
-<code class="descname">AddDips</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddDips" title="Permalink to this definition">¶</a></dt>
-<dd><p>Identifies dips in wind power time series,
-and adds result as attribute.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.AddFlexNeed">
-<code class="descname">AddFlexNeed</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddFlexNeed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates probability for flexibility needs at certain durations,
-as represented by the probability that the balancing price when away from zero.
-Adds the result as attributes.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="windpype.power.PowerData.AddExceptionTest">
 <code class="descname">AddExceptionTest</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.AddExceptionTest" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -286,12 +271,6 @@ Adds the result as attributes.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.PlotPercCorr">
-<code class="descname">PlotPercCorr</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotPercCorr" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots percentiles of histograms of changes every 1 hour, as function of time, must be used with 1 hour time series data.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="windpype.power.PowerData.PlotHourlyStepSTDTime">
 <code class="descname">PlotHourlyStepSTDTime</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotHourlyStepSTDTime" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots standard deviations of histograms of changes every 1 hour, as function of time, must be used with 1 hour time series data.</p>
@@ -332,13 +311,6 @@ Adds the result as attributes.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.PlotFlexNeed">
-<code class="descname">PlotFlexNeed</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotFlexNeed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot probability for flexibility needs at certain durations,
-as represented by the probability that the balancing price when away from zero.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="windpype.power.PowerData.PlotYearlyData">
 <code class="descname">PlotYearlyData</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotYearlyData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots data aggregated for one year at a time.</p>
@@ -375,18 +347,6 @@ as represented by the probability that the balancing price when away from zero.<
 </dd></dl>
 
 <dl class="method">
-<dt id="windpype.power.PowerData.PlotDipmagnitudeVsBalPrice">
-<code class="descname">PlotDipmagnitudeVsBalPrice</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotDipmagnitudeVsBalPrice" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots magnitudes vs balancing price (up and down) of identified dips.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotDipDurationsVsBalPrice">
-<code class="descname">PlotDipDurationsVsBalPrice</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotDipDurationsVsBalPrice" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots durations vs balancing price (up and down) of identified dips.</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="windpype.power.PowerData.PlotiFFT">
 <code class="descname">PlotiFFT</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotiFFT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots Fast Fourier Transform (FFT) for wind power.</p>
@@ -396,12 +356,6 @@ as represented by the probability that the balancing price when away from zero.<
 <dt id="windpype.power.PowerData.PlotFFT">
 <code class="descname">PlotFFT</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotFFT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots Fast Fourier Transform (FFT) for wind power.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="windpype.power.PowerData.PlotPriceSignal">
-<code class="descname">PlotPriceSignal</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.power.PowerData.PlotPriceSignal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots price signal time series close to dips of specific duration.</p>
 </dd></dl>
 
 <dl class="method">
@@ -670,12 +624,6 @@ as represented by the probability that the balancing price when away from zero.<
 <dt id="windpype.aux.get_percentile">
 <code class="descclassname">windpype.aux.</code><code class="descname">get_percentile</code><span class="sig-paren">(</span><em>time</em>, <em>values</em>, <em>percent</em>, <em>time_cut=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.get_percentile" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="function">
-<dt id="windpype.aux.plot_PSD">
-<code class="descclassname">windpype.aux.</code><code class="descname">plot_PSD</code><span class="sig-paren">(</span><em>data_ob</em>, <em>power_name</em>, <em>color='b'</em>, <em>label=None</em>, <em>add=False</em>, <em>legend=False</em>, <em>ylim=False</em><span class="sig-paren">)</span><a class="headerlink" href="#windpype.aux.plot_PSD" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots PSD (will probably be replaced by a method in the PowerData class).</p>
-</dd></dl>
 
 <dl class="function">
 <dt id="windpype.aux.identify_storms">
