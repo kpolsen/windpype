@@ -158,19 +158,36 @@
 </ul>
 <div class="section" id="what-the-code-does">
 <h2>What the code does<a class="headerlink" href="#what-the-code-does" title="Permalink to this headline">¶</a></h2>
-<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">windpype</span></span></code> is a tool for characterizing fluctuations in wind power production.
-It takes time series of wind power produced and identifies up and down ramps.
-Quantifying these is critical for a correct estimate of the flexibility demands required by the fluctuating wind power.</p>
+<p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">windpype</span></span></code> is a tool for characterizing fluctuations in wind power production and the
+requirements for energy storage options in scenarios of different penetration of variable renewable energy (VRE).
+The code is tailored to Denmark, with the following input data:
+* [Electricity Balance Data from energinet](<a class="reference external" href="https://www.energidataservice.dk/dataset/electricitybalance">https://www.energidataservice.dk/dataset/electricitybalance</a>)
+* [Wind turbine capacity and installation info from Energistyrelsen](<a class="reference external" href="https://ens.dk/service/statistik-data-noegletal-og-kort/data-oversigt-over">https://ens.dk/service/statistik-data-noegletal-og-kort/data-oversigt-over</a>-energisektoren#)
+From there, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">windpype</span></span></code> collects the following in an hourly basis:
+* Total wind power produced, aggregated for DK1, DK2 and DK
+* Total solar power produced, aggregated for DK1, DK2 and DK
+* Gross consumption, aggregated for DK1, DK2 and DK
+* Total installed capacity of wind turbines, aggregated for DK1, DK2 and DK</p>
+<p>The code that is currently released with <code class="code python docutils literal notranslate"><span class="name"><span class="pre">windpype</span></span></code> includes data from Energinet and Energistyrelsen for 2013-2018.
+Two methods can be used to identify ramps:
+* a Discrete Fourier Transform (DFT)
+* a Swinging Door Algorithm (SDA).
+In addition, there are different options to look at hourly ramps and hourly share of VRE.</p>
+</div>
+<div class="section" id="purpose">
+<h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>Quantifying the requirements for ES now and in the future is critical to the preparation of a flexible power system that can
+handle ever-increasing penetrations of VRE. Denmark being a front-runner in the integration of wind power,
+can be used as a live experiment for other countries aiming at increasing their production of VRE <a class="reference external" href="https://kpolsen.github.io/research/renew/">see more here</a>.</p>
 </div>
 <div class="section" id="some-examples">
 <h2>Some examples<a class="headerlink" href="#some-examples" title="Permalink to this headline">¶</a></h2>
-<p>The code can currently identify ramps either using a Fast Fourier Transform (FFT) or a Swinging Door Algorithm (SDA).</p>
-<p>In the figure below, the FFT is divided into a low and a high frequency part, and each is used to find (down) ramps of
+<p>In the figure below, the DFT is divided into a low and a high frequency part, and each is used to find (down) ramps of
 different durations, either long duration (red areas) or short duration (blue areas).</p>
-<img alt="images/dips_DK.png" src="images/dips_DK.png" />
+<img alt="images/timeseries.png" src="images/timeseries.png" />
 <p>In the next figure, the SDA approach is used to first compress the data, then select sections of linear
 ramping up (green dashed line) or down (red dashed line). A nice description of the SDA can be found in
-[this video presentation by OSIsoft, LLC](<a class="reference external" href="https://youtu.be/89hg2mme7S0">https://youtu.be/89hg2mme7S0</a>).</p>
+<a class="reference external" href="https://youtu.be/89hg2mme7S0">this video presentation by OSIsoft LLC</a>.</p>
 <img alt="images/SDA_example_DK.png" src="images/SDA_example_DK.png" />
 </div>
 <div class="section" id="contact">
