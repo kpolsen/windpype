@@ -15,7 +15,9 @@ See the notebook :python:`tut0_load_DK_data.ipynb`
 
 See the notebook :python:`tut1_data_overview.ipynb`
 
-.. image:: wind_penetration_DK.png
+.. figure:: wind_penetration_DK.png
+   :width: 300px
+   :align: center
 
 2. Inspect location and capacity of installed wind turbines
 -----------------------------------------------------------
@@ -23,16 +25,26 @@ See the notebook :python:`tut1_data_overview.ipynb`
 See the notebook :python:`tut1_data_overview.ipynb`
 
 .. image:: turbine_placement_mean_r.png
+   :width: 400px
+   :align: center
 
 3. Plot timeseries of selected data
 -----------------------------------
 
 See the notebook :python:`tut2 plot timeseries.ipynb`
 
+.. image:: timeseries_raw_data.png
+   :width: 400px
+   :align: center
+
 4. Get ES capacity requirements from analyzing residual load
 ------------------------------------------------------------
 
 See the notebook :python:`tut3 ES capacity.ipynb`
+
+.. image:: timeseries_raw_data.png
+   :width: 400px
+   :align: center
 
 4. Inspect hourly ramps in data
 -------------------------------
