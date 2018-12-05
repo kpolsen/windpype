@@ -39,8 +39,11 @@ What the code does
 :python:`windpype` is a tool for characterizing fluctuations in wind power production and the 
 requirements for energy storage options in scenarios of different penetration of variable renewable energy (VRE). 
 The code is tailored to Denmark, with the following input data:
-1. [Electricity Balance Data from energinet](https://www.energidataservice.dk/dataset/electricitybalance)
-2. [Wind turbine capacity and installation info from Energistyrelsen](https://ens.dk/service/statistik-data-noegletal-og-kort/data-oversigt-over-energisektoren#)
+
+1. `Electricity Balance Data from energinet <https://www.energidataservice.dk/dataset/electricitybalance>`_
+
+2. `Wind turbine capacity and installation info from Energistyrelsen <https://ens.dk/service/statistik-data-noegletal-og-kort/data-oversigt-over-energisektoren#>`_
+
 From there, :python:`windpype` collects the following in an hourly basis:
 - Total wind power produced, aggregated for DK1, DK2 and DK
 - Total solar power produced, aggregated for DK1, DK2 and DK
@@ -49,8 +52,11 @@ From there, :python:`windpype` collects the following in an hourly basis:
 
 The code that is currently released with :python:`windpype` includes data from Energinet and Energistyrelsen for 2013-2018. 
 Two methods can be used to identify ramps:
-* a Discrete Fourier Transform (DFT) 
-* a Swinging Door Algorithm (SDA). 
+
+1. a Discrete Fourier Transform (DFT) 
+
+2. a Swinging Door Algorithm (SDA). 
+
 In addition, there are different options to look at hourly ramps and hourly share of VRE.
 
 

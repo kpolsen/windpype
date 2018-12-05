@@ -167,19 +167,23 @@
 <h2>What the code does<a class="headerlink" href="#what-the-code-does" title="Permalink to this headline">¶</a></h2>
 <p><code class="code python docutils literal notranslate"><span class="name"><span class="pre">windpype</span></span></code> is a tool for characterizing fluctuations in wind power production and the
 requirements for energy storage options in scenarios of different penetration of variable renewable energy (VRE).
-The code is tailored to Denmark, with the following input data:
-1. [Electricity Balance Data from energinet](<a class="reference external" href="https://www.energidataservice.dk/dataset/electricitybalance">https://www.energidataservice.dk/dataset/electricitybalance</a>)
-2. [Wind turbine capacity and installation info from Energistyrelsen](<a class="reference external" href="https://ens.dk/service/statistik-data-noegletal-og-kort/data-oversigt-over">https://ens.dk/service/statistik-data-noegletal-og-kort/data-oversigt-over</a>-energisektoren#)
-From there, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">windpype</span></span></code> collects the following in an hourly basis:
+The code is tailored to Denmark, with the following input data:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://www.energidataservice.dk/dataset/electricitybalance">Electricity Balance Data from energinet</a></li>
+<li><a class="reference external" href="https://ens.dk/service/statistik-data-noegletal-og-kort/data-oversigt-over-energisektoren#">Wind turbine capacity and installation info from Energistyrelsen</a></li>
+</ol>
+<p>From there, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">windpype</span></span></code> collects the following in an hourly basis:
 - Total wind power produced, aggregated for DK1, DK2 and DK
 - Total solar power produced, aggregated for DK1, DK2 and DK
 - Gross consumption, aggregated for DK1, DK2 and DK
 - Total installed capacity of wind turbines, aggregated for DK1, DK2 and DK</p>
 <p>The code that is currently released with <code class="code python docutils literal notranslate"><span class="name"><span class="pre">windpype</span></span></code> includes data from Energinet and Energistyrelsen for 2013-2018.
-Two methods can be used to identify ramps:
-* a Discrete Fourier Transform (DFT)
-* a Swinging Door Algorithm (SDA).
-In addition, there are different options to look at hourly ramps and hourly share of VRE.</p>
+Two methods can be used to identify ramps:</p>
+<ol class="arabic simple">
+<li>a Discrete Fourier Transform (DFT)</li>
+<li>a Swinging Door Algorithm (SDA).</li>
+</ol>
+<p>In addition, there are different options to look at hourly ramps and hourly share of VRE.</p>
 </div>
 <div class="section" id="purpose">
 <h2>Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
