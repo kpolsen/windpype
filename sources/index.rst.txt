@@ -52,7 +52,7 @@ From there, :python:`windpype` collects the following on an hourly basis and agg
 
 - Gross consumption
 
-- Total installed capacity of wind turbines
+- Construction info and total installed capacity of all wind turbines
 
 The code that is currently released with :python:`windpype` includes data from Energinet and Energistyrelsen for 2013-2018. 
 Two methods can be used to identify ramps:
