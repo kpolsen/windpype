@@ -11,6 +11,7 @@
 
    Overview <self>
    Windpype module <windpype>
+   Getting the code <release>
    Tutorials <tutorials>
 
 .. role:: python(code)
