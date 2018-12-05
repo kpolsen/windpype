@@ -172,11 +172,13 @@ The code is tailored to Denmark, with the following input data:</p>
 <li><a class="reference external" href="https://www.energidataservice.dk/dataset/electricitybalance">Electricity Balance Data from energinet</a></li>
 <li><a class="reference external" href="https://ens.dk/service/statistik-data-noegletal-og-kort/data-oversigt-over-energisektoren#">Wind turbine capacity and installation info from Energistyrelsen</a></li>
 </ol>
-<p>From there, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">windpype</span></span></code> collects the following in an hourly basis:
-- Total wind power produced, aggregated for DK1, DK2 and DK
-- Total solar power produced, aggregated for DK1, DK2 and DK
-- Gross consumption, aggregated for DK1, DK2 and DK
-- Total installed capacity of wind turbines, aggregated for DK1, DK2 and DK</p>
+<p>From there, <code class="code python docutils literal notranslate"><span class="name"><span class="pre">windpype</span></span></code> collects the following on an hourly basis and aggregated for DK1, DK2 and DK:</p>
+<ul class="simple">
+<li>Total wind power produced</li>
+<li>Total solar power produced</li>
+<li>Gross consumption</li>
+<li>Total installed capacity of wind turbines</li>
+</ul>
 <p>The code that is currently released with <code class="code python docutils literal notranslate"><span class="name"><span class="pre">windpype</span></span></code> includes data from Energinet and Energistyrelsen for 2013-2018.
 Two methods can be used to identify ramps:</p>
 <ol class="arabic simple">

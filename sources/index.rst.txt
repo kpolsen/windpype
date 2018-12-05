@@ -44,11 +44,15 @@ The code is tailored to Denmark, with the following input data:
 
 2. `Wind turbine capacity and installation info from Energistyrelsen <https://ens.dk/service/statistik-data-noegletal-og-kort/data-oversigt-over-energisektoren#>`_
 
-From there, :python:`windpype` collects the following in an hourly basis:
-- Total wind power produced, aggregated for DK1, DK2 and DK
-- Total solar power produced, aggregated for DK1, DK2 and DK
-- Gross consumption, aggregated for DK1, DK2 and DK
-- Total installed capacity of wind turbines, aggregated for DK1, DK2 and DK
+From there, :python:`windpype` collects the following on an hourly basis and aggregated for DK1, DK2 and DK:
+
+- Total wind power produced
+
+- Total solar power produced
+
+- Gross consumption
+
+- Total installed capacity of wind turbines
 
 The code that is currently released with :python:`windpype` includes data from Energinet and Energistyrelsen for 2013-2018. 
 Two methods can be used to identify ramps:
