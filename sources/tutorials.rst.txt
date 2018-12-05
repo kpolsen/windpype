@@ -25,6 +25,8 @@ See the notebook :python:`tut1 data overview.ipynb`
 See the notebook :python:`tut2 inspect wind turbines.ipynb`
 
 .. image:: turbine_placement_mean_r.png
+   :width: 600px
+   :align: center
 
 3. Plot timeseries of selected data
 -----------------------------------
@@ -32,6 +34,8 @@ See the notebook :python:`tut2 inspect wind turbines.ipynb`
 See the notebook :python:`tut3 plot timeseries.ipynb`
 
 .. image:: timeseries_raw_data.png
+   :width: 600px
+   :align: center
 
 4. Get ES capacity requirements from analyzing residual load
 ------------------------------------------------------------
