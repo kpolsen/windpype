@@ -8,17 +8,28 @@ Tutorials
 1. Get an overview of the data
 ------------------------------
 
-See the notebook tut1_data_overview.ipnb
+See the notebook tut1_data_overview.ipynb
 
 .. image:: wind_penetration_DK.pdf
 
 2. Inspect location and capacity of installed wind turbines
 -----------------------------------------------------------
 
-See the notebook tut1_data_overview.ipnb
+See the notebook tut1_data_overview.ipynb
 
 .. image:: turbine_placement.pdf
 
-Plot moment 0 map of a line
----------------------------
+3. Plot timeseries of selected data
+-----------------------------------
 
+See the notebook `plot timeseries.ipynb`
+
+4. Get ES capacity requirements from analyzing residual load
+------------------------------------------------------------
+
+See the notebook `ES capacity.ipynb`
+
+4. Inspect hourly ramps in data
+-------------------------------
+
+See the notebook `ES power.ipynb`
