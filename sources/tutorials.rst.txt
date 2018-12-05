@@ -1,0 +1,40 @@
+.. role:: python(code)
+    :language: python
+
+Tutorials
+=========
+:python:`windpype` is best run in a jupyter notebook and below are examples of what can be done with the provided notebooks.
+
+0. Load data
+------------
+
+See the notebook :python:`tut0_load_DK_data.ipynb`
+
+1. Get an overview of the data
+------------------------------
+
+See the notebook :python:`tut1_data_overview.ipynb`
+
+.. image:: wind_penetration_DK.png
+
+2. Inspect location and capacity of installed wind turbines
+-----------------------------------------------------------
+
+See the notebook :python:`tut1_data_overview.ipynb`
+
+.. image:: turbine_placement_mean_r.png
+
+3. Plot timeseries of selected data
+-----------------------------------
+
+See the notebook :python:`tut2 plot timeseries.ipynb`
+
+4. Get ES capacity requirements from analyzing residual load
+------------------------------------------------------------
+
+See the notebook :python:`tut3 ES capacity.ipynb`
+
+4. Inspect hourly ramps in data
+-------------------------------
+
+See the notebook :python:`tut4 ES power.ipynb`
