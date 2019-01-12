@@ -1,0 +1,91 @@
+.. windpype documentation master file, created by
+   sphinx-quickstart on Tue Sep 25 15:35:10 2018.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   Overview <self>
+   Windpype module <windpype>
+   Obtaining the code <release>
+   Tutorials <tutorials>
+
+.. role:: python(code)
+    :language: python
+
+Welcome to the documentation of windpype!
+=========================================
+
+Purpose
+-------
+Quantifying the requirements for ES now and in the future is critical to the preparation of a flexible power system that can 
+handle ever-increasing penetrations of VRE. Denmark being a front-runner in the integration of wind power, 
+can be used as a live experiment for other countries aiming at increasing their production of VRE. 
+`Read more about the motivation for this method here <https://kpolsen.github.io/research/renew/>`_.
+
+:python:`windpype` is a tool for characterizing fluctuations in wind power production and the 
+requirements for energy storage options in scenarios of different penetration of variable renewable energy (VRE). 
+
+What data the code uses
+-----------------------
+The code is tailored to Denmark, with the following input data:
+
+1. `Electricity Balance Data from energinet <https://www.energidataservice.dk/dataset/electricitybalance>`_
+
+2. `Wind turbine capacity and installation info from Energistyrelsen <https://ens.dk/service/statistik-data-noegletal-og-kort/data-oversigt-over-energisektoren#>`_
+
+From there, :python:`windpype` collects the following on an hourly basis and aggregated for DK1, DK2 and DK:
+
+- Total wind power produced
+
+- Total solar power produced
+
+- Gross consumption
+
+- Construction info and total installed capacity of all wind turbines
+
+The code that is currently released with :python:`windpype` includes data from Energinet and Energistyrelsen for 2013-2018. 
+
+What the code does
+------------------
+:python:`windpype` offers several ways to look at and compare the data, in terms of 
+for instance hourly ramps and hourly share of VRE.
+
+For identifying ramps (in e.g. wind power or residual load), two methods can be used:
+
+1. a Discrete Fourier Transform (DFT) 
+
+2. a Swinging Door Algorithm (SDA). 
+
+The `Tutorials section <https://kpolsen.github.io/windpype/tutorials.html>`_ gives an insight into the capabilities available.
+
+
+Some examples
+-------------
+In the figure below, the DFT is divided into a low and a high frequency part, and each is used to find (down) ramps of 
+different durations, either long duration (red areas) or short duration (blue areas).
+
+
+.. image:: timeseries.png
+
+In the next figure, the SDA approach is used to first compress the data, then select sections of linear 
+ramping up (green dashed line) or down (red dashed line). A nice description of the SDA can be found in 
+`this video presentation by OSIsoft LLC <https://youtu.be/89hg2mme7S0>`_.
+
+.. image:: SDA_example_DK.png
+
+Contact
+-------
+For questions, contact Karen at:
+pardos at dtu.dk
+
+Indices and tables
+------------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

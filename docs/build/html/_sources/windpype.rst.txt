@@ -1,0 +1,21 @@
+windpype main module
+====================
+
+
+windpype.classes submodule
+--------------------------
+
+.. automodule:: windpype.classes
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+windpype.aux submodule
+----------------------
+
+.. automodule:: windpype.aux
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
