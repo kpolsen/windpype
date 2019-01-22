@@ -55,40 +55,41 @@ class Capacity():
         self.AccumulateCapacity()
 
     def AccumulateCapacity(self):
-        """ Calculates accumulated capacity as function of time for DK, DK1, DK2 and Bornholm.
+        """ Calculates accumulated capacity as function of time for all regions.
         """
 
         data_df = self.data_df.copy()
+        cap_data_df = data_df[['datetime','datetime_end','capacity']].copy()
 
-        data_df_DK1 = data_df[data_df['communenr'] > 400].copy()
-        data_df_DK2 = data_df[data_df['communenr'] <= 400].copy()
-        data_df_BO = data_df[data_df['communenr'] == 400].copy()
-        data_df_onshore = data_df[data_df['placing'] == 'LAND'].copy()
-        data_df_offshore = data_df[data_df['placing'] == 'HAV'].copy()
-        data_df_DK = data_df.copy()
+        # years with production info:
+        years = list(range(1977,2019))
 
-        data_df_DK1['accum_cap_DK1'] = np.cumsum(data_df_DK1['capacity'].values)
-        data_df_DK2['accum_cap_DK2'] = np.cumsum(data_df_DK2['capacity'].values)
-        data_df_BO['accum_cap_BO'] = np.cumsum(data_df_BO['capacity'].values)
-        data_df_onshore['accum_cap_onshore'] = np.cumsum(data_df_onshore['capacity'].values)
-        data_df_offshore['accum_cap_offshore'] = np.cumsum(data_df_offshore['capacity'].values)
-        data_df_DK['accum_cap_DK'] = np.cumsum(data_df['capacity'].values)
+        # For all of DK
+        end_df = pd.DataFrame({'datetime':cap_data_df['datetime_end'],'capacity':-1.* cap_data_df['capacity'].values,'datetime_end':cap_data_df['datetime_end']})
+        cap_data_df = cap_data_df.append(end_df,sort=True)
+        cap_data_df = cap_data_df.groupby(by=cap_data_df['datetime']).sum().reset_index()
+        cap_data_df['accum_cap_DK'] = np.cumsum(cap_data_df['capacity'].values)
 
-        cap_data_df = data_df_DK
-        cap_data_df = cap_data_df.drop(['commune','communenr','placing','capacity'],axis=1)
-        cap_data_df = pd.merge(cap_data_df,data_df_DK1,on='datetime',how='outer')
-        cap_data_df = cap_data_df.drop(['commune','communenr','placing','capacity'],axis=1)
-        cap_data_df = pd.merge(cap_data_df,data_df_DK2,on='datetime',how='outer')
-        cap_data_df = cap_data_df.drop(['commune','communenr','placing','capacity'],axis=1)
-        cap_data_df = pd.merge(cap_data_df,data_df_BO,on='datetime',how='outer')
-        cap_data_df = cap_data_df.drop(['commune','communenr','placing','capacity'],axis=1)
-        cap_data_df = pd.merge(cap_data_df,data_df_onshore,on='datetime',how='outer')
-        cap_data_df = cap_data_df.drop(['commune','communenr','placing','capacity'],axis=1)
-        cap_data_df = pd.merge(cap_data_df,data_df_offshore,on='datetime',how='outer')
-        cap_data_df = cap_data_df.drop(['commune','communenr','placing','capacity'],axis=1)
-        cap_data_df = cap_data_df.sort_values('datetime').reset_index(drop=True)
-        cap_data_df = cap_data_df.fillna(method='ffill')
-        cap_data_df = cap_data_df.fillna(-1)
+        setattr(self,'accum_cap_DK',np.cumsum(cap_data_df['capacity'].values))
+        setattr(self,'accum_cap_DK_datetime',cap_data_df['datetime'])
+
+        for region in ['DK1','DK2','BO','onshore','offshore']:
+            data_df_copy = data_df.copy()
+            if region == 'DK1': data_df_copy = data_df_copy[data_df_copy['communenr'] > 400]
+            if region == 'DK2': data_df_copy = data_df_copy[data_df_copy['communenr'] <= 400]
+            if region == 'BO': data_df_copy = data_df_copy[data_df_copy['communenr'] == 400]
+            if region == 'onshore': data_df_copy = data_df_copy [data_df['placing'] == 'LAND'].copy()
+            if region == 'offshore': data_df_copy = data_df_copy [data_df['placing'] == 'HAV'].copy()
+            data_df_copy = data_df_copy[['datetime','capacity','datetime_end']]
+            # Add end of turbine production as negative capacity
+            end_df = pd.DataFrame({'datetime':data_df_copy['datetime_end'],'capacity':-1.* data_df_copy['capacity'].values,'datetime_end':data_df_copy['datetime_end']})
+            data_df_copy.append(end_df,sort=True)
+            data_df_copy = data_df_copy.groupby(by=data_df_copy['datetime']).sum().reset_index()
+            # data_df_copy = data_df_copy.sort_values('datetime').reset_index(drop=True)
+            setattr(self,'accum_cap_%s' % region,np.cumsum(data_df_copy['capacity'].values))
+            setattr(self,'accum_cap_%s_datetime' % region,data_df_copy['datetime'])
+            data_df_copy['accum_cap_%s' % region] = np.cumsum(data_df_copy['capacity'].values)
+            setattr(self,'data_cap_df_%s' % region,data_df_copy)
 
         self.cap_data_df = cap_data_df
 
@@ -97,27 +98,26 @@ class Capacity():
         """
 
         # create a custom namespace for this method
-        argkeys_needed      =   ['fig_name','time_cut','fig_format']
+        argkeys_needed      =   ['fig_name','time_cut','fig_format','regions']
         a                   =   aux.handle_args(kwargs,argkeys_needed,verbose=False)
 
         if not hasattr(self, 'cap_data_df'): self.AccumulateCapacity()
 
-        cap_data_df = self.cap_data_df.copy()
-        print('Total capacity in DK: %s MW' % np.max(cap_data_df['accum_cap_DK']))
-
-        mask = np.array([(cap_data_df.datetime > a.time_cut[0]) & (cap_data_df.datetime < a.time_cut[1])])[0]
-        print('len of capacity arrays: %s' % (len(mask)))
+        # cap_data_df = self.cap_data_df.copy()
+        print('Total capacity in DK: %s MW' % np.max(self.accum_cap_DK))
 
         fig = plt.figure(figsize=(10,7))
         ax1 = fig.add_subplot(1,1,1)
         ax1.set_xlabel('Time',fontsize=20)
         ax1.set_ylabel('Accumulative capacity [MW]',fontsize=20)
         colors = ['k','b','r','purple']
-        for _,ext in enumerate(['DK','DK1','DK2','BO']):
-            ax1.plot(cap_data_df['datetime'],cap_data_df['accum_cap_'+ext],colors[_],label=ext)
-            ax1.plot([max(cap_data_df['datetime']),a.time_cut[1]],2*[max(cap_data_df['accum_cap_'+ext])],colors[_]) # Filling up until now...
-            print('%s takes up:' % ext)
-            print('%.2f %% to %.2f %% ' % (min(cap_data_df[mask]['accum_cap_'+ext]/cap_data_df[mask]['accum_cap_DK'])*100,max(cap_data_df[mask]['accum_cap_'+ext]/cap_data_df[mask]['accum_cap_DK'])*100))  
+        for _,region in enumerate(a.regions):
+            datetime = getattr(self,'accum_cap_%s_datetime' % region)
+            accum_cap = getattr(self,'accum_cap_%s' % region)
+            ax1.plot(datetime,accum_cap,colors[_],label=region)
+            ax1.plot([max(datetime),a.time_cut[1]],2*[max(accum_cap)],colors[_]) # Filling up until now...
+            # print('%s takes up:' % ext)
+            # print('%.2f %% to %.2f %% ' % (min(accum_cap/self.accum_cap_DK)*100,max(accum_cap/self.accum_cap_DK)*100))  
         if a.time_cut: ax1.set_xlim(a.time_cut)
         plt.legend(fontsize=15)
         ax1.grid()
@@ -159,24 +159,70 @@ class Capacity():
         """ Loads data and stores as a dataframe.
         """
 
-        capacity = pd.read_table(self.file_path+'Kapacitet.txt',skiprows=1,names=['capacity'],engine='python',skip_blank_lines=False)
-        placing = pd.read_table(self.file_path+'Placering.txt',skiprows=1,names=['placing'],engine='python',skip_blank_lines=False)
-        communenr = pd.read_table(self.file_path+'Kommune-nr.txt',skiprows=1,names=['communenr'],engine='python',skip_blank_lines=False)
-        commune = pd.read_table(self.file_path+'Kommune.txt',skiprows=1,names=['commune'],engine='python',skip_blank_lines=False)
-        date = pd.read_table(self.file_path+'Dato.txt',skiprows=1,names=['datetime'],engine='python',skip_blank_lines=False)
-        capacity['capacity'] = capacity['capacity']/1000. # MW
+        # years with production info:
+        years = list(range(1977,2019))
 
-        # Convert dates
-        self.N_datapoints = len(date)
-        datetime = [dateutil.parser.parse(date['datetime'][i]) for i in range(self.N_datapoints)]
+        capacity_df = pd.read_excel(self.file_path+'anlaegprodtilnettet.xls',skiprows=17,skipfooter=3)
+        # rewrite column names, starting with production years (and months of most recent year)
+        production_dates = pd.read_excel(self.file_path+'anlaegprodtilnettet.xls',skiprows=15,nrows=1)
+        capacity_keys = list(capacity_df.keys())[0:16]
+        production_dates = production_dates.iloc[0].values
+        for _,date in enumerate(production_dates):
+            try:
+                production_dates[_] = date.month
+            except:
+                pass
+        production_dates = list(production_dates)[16::]
+        capacity_keys.extend(production_dates)
+        translate = {'Møllenummer (GSRN)' : 'GSRN',\
+                        'Dato for oprindelig nettilslutning' : 'datetime',\
+                        'Kapacitet (kW)' : 'capacity',\
+                        'Kommune-nr.' : 'communenr',\
+                        'Kommune' : 'commune',\
+                        'Type af placering' : 'placing',\
+                        'Akkumuleret' : 'prod2018'}
+        for year in years:
+            if year != 2018: translate[year] = 'prod%s' % year
+        for _ in range(len(capacity_keys)):
+            if capacity_keys[_] in translate.keys():
+                capacity_keys[_] = translate[capacity_keys[_]]
+        capacity_df.columns = capacity_keys
+
+        # Select only certain columns
+        data_df = capacity_df[['GSRN','datetime','capacity','communenr','commune','placing']].copy()
+        for year in years:
+            data_df['prod%s' % year] = capacity_df['prod%s' % year]
+
+        # Convert datetimes and sort
+        self.N_datapoints = len(data_df)
+        # datetime = [dateutil.parser.parse(str(capacity_df['datetime'][i])) for i in range(self.N_datapoints)]
+        # capacity_df['datetime'] = datetime
+        data_df = data_df.sort_values('datetime').reset_index(drop=True)
 
         # Convert placing
-        placing['placing'] = placing['placing'].str.upper()
+        data_df['placing'] = data_df['placing'].str.upper()
 
-        # Combine into one dataframe
-        data_df = pd.concat([capacity,communenr,commune,placing],axis=1)
-        data_df['datetime'] = datetime
-        data_df = data_df.sort_values('datetime').reset_index(drop=True)
+        # Set no production to 0, remove NaNs
+        for year in years:
+            data_df['prod%s' % year] = data_df['prod%s' % year].fillna(0)
+
+        # Add end date of working life
+        datetime_end = np.array([np.datetime64('2019-01-01 00:00:00')]*len(data_df))
+        # years.reverse()
+        total_prod = 0
+        for year in years:
+            prod = data_df['prod%s' % year].values
+            datetime_end[prod > 0] = np.datetime64('%s-01-01 00:00:00' % (year+1)) # production ran until the end of this year
+            total_prod += prod
+        data_df['datetime_end'] = datetime_end
+        # set capacity to 0 for turbines with no reported production
+        capacity = data_df['capacity'].values
+        capacity[total_prod == 0] = 0
+        data_df['capacity'] = capacity
+
+        # Forward fill any other NaNs:
+        data_df = data_df.fillna(method='ffill')
+        data_df = data_df.fillna(-1)
 
         if time_period:
             time_period = [(time_period[0] <= data_df['datetime']) & (data_df['datetime'] <= time_period[1])]

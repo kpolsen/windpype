@@ -398,6 +398,7 @@ def handle_args(kwargs,argkeys_needed,verbose=False):
                             price_name='',\
 
                             raw_data_names='',\
+                            regions=['DK','DK1','DK2','BO'],\
                             remove_zeros=False,\
 
                             scale_by_capacity=False,\
