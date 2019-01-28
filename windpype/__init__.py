@@ -2,6 +2,7 @@ __all__ = ["power","market","capacity","aux"]
 
 from windpype.power import *
 from windpype.capacity import *
+from windpype.aux import *
 
 print('windpype module import complete')
 

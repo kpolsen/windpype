@@ -4,7 +4,7 @@
 
 print('windpype submodule "capacity" imported')
 
-import windpype.aux as aux
+import aux as aux
 import numpy as np
 import pandas as pd
 import dateutil.parser
